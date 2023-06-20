@@ -1,0 +1,228 @@
+Desenvolvimento de uma Calculadora em Linguagem C com o suporte do ChatGpt
+
+**************
+
+Calculadora Simples - operações básicas como adição, subtração, multiplicação e divisão
+
+
+Aqui está um exemplo simples de código fonte de uma calculadora em linguagem C que pode realizar operações básicas como adição, subtração, multiplicação e divisão:
+
+
+#include <stdio.h>
+
+int main() {
+    char operador;
+    double primeiroNumero, segundoNumero;
+
+    printf("Digite um operador (+, -, *, /): ");
+    scanf("%c", &operador);
+
+    printf("Digite dois operandos: ");
+    scanf("%lf %lf",&primeiroNumero, &segundoNumero);
+
+    switch(operador)
+    {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero + segundoNumero);
+            break;
+
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero - segundoNumero);
+            break;
+
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero * segundoNumero);
+            break;
+
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero / segundoNumero);
+            break;
+
+        // operador não corresponde a nenhum caso +, -, *, /
+        default:
+            printf("Erro! operador não é correto");
+    }
+
+    return 0;
+}
+
+
+Este código pede ao usuário para inserir um operador e dois operandos. 
+Em seguida, ele usa uma instrução [ switch ] para determinar qual operação deve ser realizada com base no operador inserido pelo usuário. 
+O resultado da operação é então exibido na tela.
+
+Para adicionar mais operações à calculadora, você pode adicionar mais casos à instrução switch no código. 
+Por exemplo, se você quiser adicionar uma operação de potência à calculadora, pode fazer isso adicionando o seguinte caso à instrução switch:
+
+
+case '^':
+    printf("%.1lf ^ %.1lf = %.1lf",primeiroNumero, segundoNumero, pow(primeiroNumero, segundoNumero));
+    break;
+
+
+Neste caso, o operador [ ^ ] é usado para representar a operação de potência. 
+Quando o usuário insere este operador, o programa calcula a potência do primeiro número elevado ao segundo número usando a função [ pow() ] da biblioteca [ math.h ]. 
+O resultado é então exibido na tela.
+
+Lembre-se de incluir a biblioteca [ math.h] no início do código para poder usar a função [ pow() ]:
+
+
+#include <math.h>
+
+
+Você pode adicionar quantas operações desejar à calculadora seguindo este mesmo padrão. 
+Basta adicionar um novo caso à instrução switch para cada operação que deseja adicionar e especificar como a operação deve ser realizada.
+
+***********
+
+Calculadora Científica operações básicas como adição, subtração, multiplicação e divisão, bem como operações científicas como seno, cosseno e tangente
+
+
+Aqui está um exemplo de código fonte de uma calculadora científica em linguagem C que pode realizar operações básicas como adição, subtração, multiplicação e divisão, bem como operações científicas como seno, cosseno e tangente:
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    char operador;
+    double primeiroNumero, segundoNumero;
+
+    printf("Digite um operador (+, -, *, /, s, c, t): ");
+    scanf("%c", &operador);
+
+    if (operador == 's'  operador == 't') {
+        printf("Digite um operando: ");
+        scanf("%lf", &primeiroNumero);
+    } else {
+        printf("Digite dois operandos: ");
+        scanf("%lf %lf",&primeiroNumero, &segundoNumero);
+    }
+
+    switch(operador)
+    {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero + segundoNumero);
+            break;
+
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero - segundoNumero);
+            break;
+
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero * segundoNumero);
+            break;
+
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero / segundoNumero);
+            break;
+
+        case 's':
+            printf("sin(%.1lf) = %.1lf", primeiroNumero, sin(primeiroNumero));
+            break;
+
+        case 'c':
+            printf("cos(%.1lf) = %.1lf", primeiroNumero, cos(primeiroNumero));
+            break;
+
+        case 't':
+            printf("tan(%.1lf) = %.1lf", primeiroNumero, tan(primeiroNumero));
+            break;
+
+        // operador não corresponde a nenhum caso +, -, *, /, s, c, t
+        default:
+            printf("Erro! operador não é correto");
+    }
+
+    return 0;
+}
+
+Este código é semelhante ao código da calculadora básica que eu mostrei anteriormente. 
+A principal diferença é que ele inclui casos adicionais na instrução switch para lidar com as operações científicas de seno (s), cosseno (c) e tangente (t).
+Quando o usuário insere um desses operadores, o programa usa as funções sin(), cos() e tan() da biblioteca [ math.h ] para calcular o seno, cosseno ou tangente do número inserido pelo usuário. 
+O resultado é então exibido na tela.
+
+Você pode modificar este código para adicionar mais operações científicas ou alterar seu comportamento de outras maneiras. 
+Por exemplo, você pode adicionar operações para calcular o logaritmo natural ou o logaritmo na base 10 de um número.
+
+**************
+
+Calculadora Científica - operações básicas como adição, subtração, multiplicação e divisão, bem como operações científicas como porcentagem, raiz quadrada, exponenciação, seno, cosseno e tangente:
+
+Aqui está um exemplo de código fonte de uma calculadora científica em linguagem C que pode realizar operações básicas como adição, subtração, multiplicação e divisão, bem como operações científicas como porcentagem, raiz quadrada, exponenciação, seno, cosseno e tangente:
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    char operador;
+    double primeiroNumero, segundoNumero;
+
+    printf("Digite um operador (+, -, *, /, %%, r, e, s, c, t): ");
+    scanf("%c", &operador);
+
+    if (operador == 's'  operador == 't' || operador == 'r') {
+        printf("Digite um operando: ");
+        scanf("%lf", &primeiroNumero);
+    } else {
+        printf("Digite dois operandos: ");
+        scanf("%lf %lf",&primeiroNumero, &segundoNumero);
+    }
+
+    switch(operador)
+    {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero + segundoNumero);
+            break;
+
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero - segundoNumero);
+            break;
+
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero * segundoNumero);
+            break;
+
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",primeiroNumero, segundoNumero, primeiroNumero / segundoNumero);
+            break;
+
+        case '%':
+            printf("%.1lf %% %.1lf = %.1lf",primeiroNumero, segundoNumero, (primeiroNumero / 100) * segundoNumero);
+            break;
+
+        case 'r':
+            printf("sqrt(%.1lf) = %.1lf", primeiroNumero, sqrt(primeiroNumero));
+            break;
+
+        case 'e':
+            printf("%.1lf ^ %.1lf = %.1lf",primeiroNumero, segundoNumero, pow(primeiroNumero, segundoNumero));
+            break;
+
+        case 's':
+            printf("sin(%.1lf) = %.1lf", primeiroNumero, sin(primeiroNumero));
+            break;
+
+        case 'c':
+            printf("cos(%.1lf) = %.1lf", primeiroNumero, cos(primeiroNumero));
+            break;
+
+        case 't':
+            printf("tan(%.1lf) = %.1lf", primeiroNumero, tan(primeiroNumero));
+            break;
+
+        // operador não corresponde a nenhum caso +, -, *, / , %%, r , e , s , c , t
+        default:
+            printf("Erro! operador não é correto");
+    }
+
+    return 0;
+}
+
+Este código é semelhante ao código da calculadora científica que eu mostrei anteriormente. 
+A principal diferença é que ele inclui casos adicionais na instrução [ switch ] para lidar com as operações científicas de porcentagem (%), raiz quadrada (r) e exponenciação (e). 
+Quando o usuário insere um desses operadores, o programa usa as funções [ sqrt() ] e [ pow() ] da biblioteca math.h ou uma expressão matemática simples para calcular a porcentagem, raiz quadrada ou exponenciação dos números inseridos pelo usuário. 
+O resultado é então exibido na tela.
+
+Você pode modificar este código para adicionar mais operações científicas ou alterar seu comportamento de outras maneiras. 
+Por exemplo, você pode adicionar operações para calcular o logaritmo natural ou o logaritmo na base 10 de um número.
+
